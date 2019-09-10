@@ -1,0 +1,44 @@
+@mixin boton($color){
+    background-color: $color;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    display: block;
+    text-decoration: none;
+    color: $white-color;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin image($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin gradient($color1, $color2){
+    background-image: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+@mixin points($bp){
+    @media only screen and (min-width: map-get($breakpoints, $bp)){
+        @content;
+    }
+}
+
+@mixin menus(){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+    @include points('desktop'){
+
+        flex: 0 1 calc(30% - 1rem);
+    }
+
+    a{
+        color: $black-color;
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+}
+

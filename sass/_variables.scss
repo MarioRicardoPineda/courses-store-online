@@ -1,0 +1,25 @@
+// Asignacion de variables Sass
+
+// Fuentes
+$main-font: 'Raleway', verdana, sans-serif;
+
+// Colors
+$main-color: #33c3f0;
+$secundary-color: #741d51;
+$three-color: #e44e52;
+$gray-color: #e1e1e1;
+$white-color: #ffffff;
+$black-color: #000;
+
+// medias queries
+$small: 20rem;
+$medium: 48rem;
+$large: 64rem;
+$xl: 75rem;
+
+$breakpoints : (
+    'phone' : $small,
+    'tablet' : $medium,
+    'desktop' : $large,
+    'xl' : $xl
+);

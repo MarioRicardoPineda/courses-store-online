@@ -1,0 +1,240 @@
+
+@import './variables';
+@import './mixins';
+
+// estilos generales
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: $main-font;
+}
+
+// estilos de clases extra
+.contenedor{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.oculto{
+    display: none;
+}
+
+.centrado{
+    text-align: center;
+}
+
+// estilos del header/menu
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & .logo{
+        padding: 1.4rem 0;
+    }
+}
+
+// estilos del carrito de compras
+.carrito-compras{
+    position: relative;
+    
+    &:hover .contenido{
+        display: block;
+        position: absolute;
+        right: 0;
+        background-color: $gray-color;
+        padding: 1rem;
+        max-width: 320px;
+
+        img{
+            max-width: 150px;
+        }
+
+        .boton{
+            @include boton($main-color);
+        }
+    }
+}
+
+// estilos del banner
+.hero{
+    display: flex;
+    align-items: center;
+    min-height: 24rem;
+    @include image('../img/hero.jpg');
+    background-size: cover;
+    color : $white-color;
+
+    .contenido-hero{
+        flex: 1;
+
+        h2{
+            font-weight: 400;
+            font-size: 2.4rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        form{
+            position: relative;
+            width: 100%;
+
+            input[type=submit]{
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 3rem;
+                height: 3rem;
+                border:none;
+                background: none;
+                @include image('../img/lupa.png');
+                cursor:pointer; 
+                text-indent: -9999px;
+            }
+            input[type=text]{
+                width: 100%;
+                height: 3rem;
+            }
+
+            @include points('tablet'){
+                width: 60%;
+            }
+            @include points('desktop'){
+                width: 40%;
+            }
+            
+        }
+    }
+}
+
+// estilos de la barra inferior
+.barra{
+    min-height: 5rem;
+    @include gradient($secundary-color, $three-color);
+    color: $white-color;
+    display: flex;
+    align-items: center;
+
+    .iconos{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        @include points('tablet'){
+            flex-direction: row;
+        }
+
+        .icono{
+            flex: 1;
+            background-size: 2.4rem;
+            background-position: 0 center!important;
+
+            @include points('tablet'){
+                background-position: 0 center !important;
+                background-size: 2rem;
+            }
+
+            @include points('desktop'){
+                background-position: left center!important;
+            }
+
+            text-align: center;
+
+            &.icono1{
+                @include image('../img/icono1.png');
+            }
+            &.icono2{
+                @include image('../img/icono2.png');
+            }
+            &.icono3{
+                @include image('../img/icono3.png');
+            }
+        }
+    }
+}
+
+// estilos de los cursos
+.cursos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .curso{
+
+        .imagen-curso{
+            width: 100%;
+        }
+
+        flex: 0 1 calc(90% - 1rem);
+        border: 1px solid $gray-color;
+        margin-bottom: 1rem; 
+
+        @include points('tablet'){
+            flex: 0 1 calc(33% - 1rem);
+        }
+        @include points('desktop'){
+            flex: 0 1 calc(25% - 1rem);
+        }
+    }
+}
+
+.info-curso{
+    padding: 1rem;
+
+    h1{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .precio{
+        display: flex;
+        justify-content: space-between;
+        
+        .regular{
+            text-decoration: line-through;
+            color : #f00;
+        }
+
+        .oferta{
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f0;
+        }
+
+    }
+
+    .boton{
+        @include boton($secundary-color);
+    }
+}
+
+
+// estilos del footer
+.footer{
+    margin-top: 1rem;
+    border-top: 1px solid $gray-color;
+    padding-top: 2rem;
+
+    .contenedor-footer{
+        display: flex;
+        flex-direction: column;
+
+        @include points('phone'){
+            flex-direction: row;
+        }
+    }
+}
+
+
+.menu{
+    @include menus();
+}
