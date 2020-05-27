@@ -15,15 +15,6 @@
   ],
   "author": "Ricardo Pineda",
   "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-sass": "^4.0.2"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%"
-  ],
+  "devDependencies": {},
   "dependencies": {}
 }
